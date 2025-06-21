@@ -2,6 +2,14 @@
   "name": "dullahan",
   "packageManager": "yarn@4.9.1",
   "type": "module",
+  "workspaces": [
+    "sir-strapius",
+    "sir-strapius-head"
+  ],
+  "scripts": {
+    "strapi": "yarn workspace sir-strapius",
+    "strapi-head": "yarn workspace sir-strapius-head"
+  },
   "devDependencies": {
     "eslint": "^9",
     "eslint-plugin-react-hooks": "^5.2.0",
