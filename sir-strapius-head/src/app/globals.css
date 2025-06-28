@@ -120,3 +120,127 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Markdown Styles */
+.markdown {
+  @apply text-foreground leading-relaxed;
+}
+
+/* Headings - Strong Impact */
+.markdown h1 {
+  @apply text-2xl sm:text-4xl font-bold tracking-tight text-foreground mb-4 sm:mb-8 mt-6 sm:mt-10 pb-1 sm:pb-3 border-b-2 border-primary/20 leading-tight;
+}
+
+.markdown h2 {
+  @apply text-xl sm:text-3xl font-semibold tracking-tight text-foreground mb-3 sm:mb-6 mt-5 sm:mt-8 pb-1 sm:pb-2 border-b border-muted leading-tight;
+}
+
+.markdown h3 {
+  @apply text-lg sm:text-2xl font-semibold text-foreground mb-2 sm:mb-4 mt-4 sm:mt-6 leading-tight;
+}
+
+.markdown h4 {
+  @apply text-base sm:text-xl font-medium text-foreground mb-2 sm:mb-3 mt-3 sm:mt-5 leading-tight;
+}
+
+.markdown h5 {
+  @apply text-sm sm:text-lg font-medium text-foreground mb-1 sm:mb-2 mt-2 sm:mt-4 leading-tight;
+}
+
+.markdown h6 {
+  @apply text-xs sm:text-base font-medium text-muted-foreground mb-1 sm:mb-2 mt-2 sm:mt-3 leading-tight;
+}
+
+/* Paragraphs and Text */
+.markdown p {
+  @apply mb-3 sm:mb-6 text-sm sm:text-base leading-6 sm:leading-7;
+}
+
+.markdown strong {
+  @apply font-semibold text-foreground;
+}
+
+.markdown em {
+  @apply italic text-foreground;
+}
+
+.markdown a {
+  @apply text-primary/50 hover:text-primary/80 font-medium underline decoration-primary/30 hover:decoration-primary transition-all duration-200 hover:bg-primary/5 px-1 py-0.5 rounded;
+}
+
+/* Code Blocks - Special and Well Looking */
+.markdown pre {
+  @apply bg-muted/50 border border-border rounded-lg p-3 sm:p-6 mb-4 sm:mb-8 overflow-x-auto shadow-sm w-full;
+  @apply backdrop-blur-sm;
+}
+
+.markdown pre code {
+  @apply text-xs sm:text-base font-mono text-foreground bg-transparent p-0 block w-full;
+}
+
+.markdown code {
+  @apply bg-muted/70 text-foreground px-1 sm:px-2 py-0.5 sm:py-1 rounded-md text-xs sm:text-base font-mono;
+}
+
+/* Inline Code */
+.markdown :not(pre) > code {
+  @apply bg-muted/70 text-foreground px-1 sm:px-2 py-0.5 sm:py-1 rounded-md text-xs sm:text-base font-mono;
+}
+
+/* Lists */
+.markdown ul {
+  @apply mb-3 sm:mb-6 list-disc list-inside space-y-0.5 sm:space-y-2;
+}
+
+.markdown ol {
+  @apply mb-3 sm:mb-6 list-decimal list-inside space-y-0.5 sm:space-y-2;
+}
+
+.markdown li {
+  @apply text-sm sm:text-base leading-6 sm:leading-7;
+}
+
+.markdown li > ul,
+.markdown li > ol {
+  @apply mt-2 ml-4;
+}
+
+/* Blockquotes */
+.markdown blockquote {
+  @apply border-l-4 border-primary/30 pl-3 sm:pl-6 py-1 sm:py-2 mb-3 sm:mb-6 bg-muted/30 rounded-r-lg italic whitespace-pre-wrap;
+}
+
+.markdown blockquote p {
+  @apply mb-0 text-muted-foreground;
+}
+
+/* Tables */
+.markdown table {
+  @apply w-full border-collapse border border-border rounded-lg overflow-hidden mb-4 sm:mb-8;
+}
+
+.markdown th {
+  @apply bg-muted/50 px-2 sm:px-6 py-2 sm:py-4 text-left font-semibold text-foreground border-b border-border text-xs sm:text-sm;
+}
+
+.markdown td {
+  @apply px-2 sm:px-6 py-2 sm:py-4 border-b border-border text-xs sm:text-sm;
+}
+
+.markdown tr:last-child td {
+  @apply border-b-0;
+}
+
+.markdown tr:hover {
+  @apply bg-muted/30;
+}
+
+/* Horizontal Rule */
+.markdown hr {
+  @apply border-0 h-px bg-border my-6 sm:my-10;
+}
+
+/* Images */
+.markdown img {
+  @apply rounded-lg shadow-md max-w-full h-auto my-4 sm:my-8;
+}

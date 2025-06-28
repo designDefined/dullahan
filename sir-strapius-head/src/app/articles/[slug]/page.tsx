@@ -14,19 +14,16 @@ export default async function Page({
   });
 
   return (
-    <div>
+    <article>
       <Header pathname="/articles" />
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold mb-4">{article?.title}</h1>
-        <p className="text-muted-foreground">{article?.description}</p>
-        <div className="whitespace-pre-wrap">
-          {article?.blocks?.map((block) => {
-            if (block.__component !== "shared.rich-text") return null;
-            if (!block.body) return null;
-            return <MarkdownRenderer key={block.id} markdown={block.body} />;
-          })}
-        </div>
+        {article?.blocks?.map((block) => {
+          if (block.__component !== "shared.rich-text") return null;
+          if (!block.body) return null;
+          return <MarkdownRenderer key={block.id} markdown={block.body} />;
+        })}
       </div>
-    </div>
+    </article>
   );
 }

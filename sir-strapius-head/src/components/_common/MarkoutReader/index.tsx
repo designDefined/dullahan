@@ -11,6 +11,9 @@ export async function MarkdownRenderer({ markdown }: MarkdownRendererProps) {
   const contentHtml = processed.toString();
 
   return (
-    <div className="prose" dangerouslySetInnerHTML={{ __html: contentHtml }} />
+    <div
+      className="markdown"
+      dangerouslySetInnerHTML={{ __html: contentHtml }}
+    />
   );
 }
