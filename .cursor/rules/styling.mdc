@@ -1,0 +1,74 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+
+# Styling Rules
+
+## Default Styling Stack
+
+- Use Tailwind CSS as the primary styling framework
+- Use shadcn/ui as the component library
+- Prefer utility-first approach with Tailwind classes
+- Use CSS modules or styled-components only when absolutely necessary
+
+## shadcn/ui Installation
+
+- Use `npx shadcn@canary add` instead of `npx shadcn@latest add`
+- This is required for monorepo projects to ensure proper configuration
+- Always run shadcn commands from the frontend project directory (sir-strapius-head)
+
+## Component Styling Guidelines
+
+- Use Tailwind utility classes for styling
+- Leverage shadcn/ui components for common UI patterns (buttons, forms, modals, etc.)
+- Customize shadcn components using Tailwind classes when needed
+- Maintain consistent spacing using Tailwind's spacing scale
+- Use semantic color names from the design system
+
+## File Organization
+
+- Keep component-specific styles within the component file using Tailwind classes
+- Use `globals.css` for global styles and Tailwind directives
+- Create reusable component variants using Tailwind's arbitrary value syntax when needed
+
+## Example
+
+```tsx
+// ✅ Good - Using Tailwind classes with shadcn components
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+export function ArticleCard({ article }) {
+  return (
+    <Card className="hover:shadow-lg transition-shadow duration-200">
+      <CardHeader>
+        <CardTitle className="text-xl font-semibold text-gray-900">
+          {article.title}
+        </CardTitle>
+      </CardHeader>
+      <CardContent className="space-y-4">
+        <p className="text-gray-600 line-clamp-3">{article.excerpt}</p>
+        <div className="flex justify-between items-center">
+          <span className="text-sm text-gray-500">{article.publishedAt}</span>
+          <Button variant="outline" size="sm">
+            Read More
+          </Button>
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
+```
+
+## Installation Commands
+
+```bash
+# Install shadcn components (run from sir-strapius-head directory)
+cd sir-strapius-head
+npx shadcn@canary add button
+npx shadcn@canary add card
+npx shadcn@canary add input
+# ... other components as needed
+```
