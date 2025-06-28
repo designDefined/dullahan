@@ -8,9 +8,9 @@ export default async function AboutPage() {
   return (
     <article>
       <Header pathname="/about" />
-      <div className="container mx-auto px-4 py-8 animate-reveal">
+      <div className="animate-reveal container mx-auto px-4 py-8">
         {about?.title && (
-          <h1 className="text-3xl font-bold mb-4">{about.title}</h1>
+          <h1 className="mb-4 text-3xl font-bold">{about.title}</h1>
         )}
         {about?.blocks?.map((block) => {
           if (block.__component !== "shared.rich-text") return null;

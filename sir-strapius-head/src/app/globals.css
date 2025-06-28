@@ -155,103 +155,103 @@
 
 /* Headings - Strong Impact */
 .markdown h1 {
-  @apply text-2xl sm:text-4xl font-bold tracking-tight text-foreground mb-4 sm:mb-8 mt-6 sm:mt-10 pb-1 sm:pb-3 border-b-2 border-primary/20 leading-tight;
+  @apply text-foreground border-primary/20 mb-4 mt-6 border-b-2 pb-1 text-2xl font-bold leading-tight tracking-tight sm:mb-8 sm:mt-10 sm:pb-3 sm:text-4xl;
 }
 
 .markdown h2 {
-  @apply text-xl sm:text-3xl font-semibold tracking-tight text-foreground mb-3 sm:mb-6 mt-5 sm:mt-8 pb-1 sm:pb-2 border-b border-muted leading-tight;
+  @apply text-foreground border-muted mb-3 mt-5 border-b pb-1 text-xl font-semibold leading-tight tracking-tight sm:mb-6 sm:mt-8 sm:pb-2 sm:text-3xl;
 }
 
 .markdown h3 {
-  @apply text-lg sm:text-2xl font-semibold text-foreground mb-2 sm:mb-4 mt-4 sm:mt-6 leading-tight;
+  @apply text-foreground mb-2 mt-4 text-lg font-semibold leading-tight sm:mb-4 sm:mt-6 sm:text-2xl;
 }
 
 .markdown h4 {
-  @apply text-base sm:text-xl font-medium text-foreground mb-2 sm:mb-3 mt-3 sm:mt-5 leading-tight;
+  @apply text-foreground mb-2 mt-3 text-base font-medium leading-tight sm:mb-3 sm:mt-5 sm:text-xl;
 }
 
 .markdown h5 {
-  @apply text-sm sm:text-lg font-medium text-foreground mb-1 sm:mb-2 mt-2 sm:mt-4 leading-tight;
+  @apply text-foreground mb-1 mt-2 text-sm font-medium leading-tight sm:mb-2 sm:mt-4 sm:text-lg;
 }
 
 .markdown h6 {
-  @apply text-xs sm:text-base font-medium text-muted-foreground mb-1 sm:mb-2 mt-2 sm:mt-3 leading-tight;
+  @apply text-muted-foreground mb-1 mt-2 text-xs font-medium leading-tight sm:mb-2 sm:mt-3 sm:text-base;
 }
 
 /* Paragraphs and Text */
 .markdown p {
-  @apply mb-3 sm:mb-6 text-sm sm:text-base leading-6 sm:leading-7;
+  @apply mb-3 text-sm leading-6 sm:mb-6 sm:text-base sm:leading-7;
 }
 
 .markdown strong {
-  @apply font-semibold text-foreground;
+  @apply text-foreground font-semibold;
 }
 
 .markdown em {
-  @apply italic text-foreground;
+  @apply text-foreground italic;
 }
 
 .markdown a {
-  @apply text-primary/50 hover:text-primary/80 font-medium underline decoration-primary/30 hover:decoration-primary transition-all duration-200 hover:bg-primary/5 px-1 py-0.5 rounded;
+  @apply text-primary/50 hover:text-primary/80 decoration-primary/30 hover:decoration-primary hover:bg-primary/5 rounded px-1 py-0.5 font-medium underline transition-all duration-200;
 }
 
 /* Code Blocks - Special and Well Looking */
 .markdown pre {
-  @apply bg-muted/50 border border-border rounded-lg p-3 sm:p-6 mb-4 sm:mb-8 overflow-x-auto shadow-sm w-full;
+  @apply bg-muted/50 border-border mb-4 w-full overflow-x-auto rounded-lg border p-3 shadow-sm sm:mb-8 sm:p-6;
   @apply backdrop-blur-sm;
 }
 
 .markdown pre code {
-  @apply text-xs sm:text-base font-mono text-foreground bg-transparent p-0 block w-full;
+  @apply text-foreground block w-full bg-transparent p-0 font-mono text-xs sm:text-base;
 }
 
 .markdown code {
-  @apply bg-muted/70 text-foreground px-1 sm:px-2 py-0.5 sm:py-1 rounded-md text-xs sm:text-base font-mono;
+  @apply bg-muted/70 text-foreground rounded-md px-1 py-0.5 font-mono text-xs sm:px-2 sm:py-1 sm:text-base;
 }
 
 /* Inline Code */
 .markdown :not(pre) > code {
-  @apply bg-muted/70 text-foreground px-1 sm:px-2 py-0.5 sm:py-1 rounded-md text-xs sm:text-base font-mono;
+  @apply bg-muted/70 text-foreground rounded-md px-1 py-0.5 font-mono text-xs sm:px-2 sm:py-1 sm:text-base;
 }
 
 /* Lists */
 .markdown ul {
-  @apply mb-3 sm:mb-6 list-disc list-inside space-y-0.5 sm:space-y-2;
+  @apply mb-3 list-inside list-disc space-y-0.5 sm:mb-6 sm:space-y-2;
 }
 
 .markdown ol {
-  @apply mb-3 sm:mb-6 list-decimal list-inside space-y-0.5 sm:space-y-2;
+  @apply mb-3 list-inside list-decimal space-y-0.5 sm:mb-6 sm:space-y-2;
 }
 
 .markdown li {
-  @apply text-sm sm:text-base leading-6 sm:leading-7;
+  @apply text-sm leading-6 sm:text-base sm:leading-7;
 }
 
 .markdown li > ul,
 .markdown li > ol {
-  @apply mt-2 ml-4;
+  @apply ml-4 mt-2;
 }
 
 /* Blockquotes */
 .markdown blockquote {
-  @apply border-l-4 border-primary/30 pl-3 sm:pl-6 py-1 sm:py-2 mb-3 sm:mb-6 bg-muted/30 rounded-r-lg italic whitespace-pre-wrap;
+  @apply border-primary/30 bg-muted/30 mb-3 whitespace-pre-wrap rounded-r-lg border-l-4 py-1 pl-3 italic sm:mb-6 sm:py-2 sm:pl-6;
 }
 
 .markdown blockquote p {
-  @apply mb-0 text-muted-foreground;
+  @apply text-muted-foreground mb-0;
 }
 
 /* Tables */
 .markdown table {
-  @apply w-full border-collapse border border-border rounded-lg overflow-hidden mb-4 sm:mb-8;
+  @apply border-border mb-4 w-full border-collapse overflow-hidden rounded-lg border sm:mb-8;
 }
 
 .markdown th {
-  @apply bg-muted/50 px-2 sm:px-6 py-2 sm:py-4 text-left font-semibold text-foreground border-b border-border text-xs sm:text-sm;
+  @apply bg-muted/50 text-foreground border-border border-b px-2 py-2 text-left text-xs font-semibold sm:px-6 sm:py-4 sm:text-sm;
 }
 
 .markdown td {
-  @apply px-2 sm:px-6 py-2 sm:py-4 border-b border-border text-xs sm:text-sm;
+  @apply border-border border-b px-2 py-2 text-xs sm:px-6 sm:py-4 sm:text-sm;
 }
 
 .markdown tr:last-child td {
@@ -264,12 +264,12 @@
 
 /* Horizontal Rule */
 .markdown hr {
-  @apply border-0 h-px bg-border my-6 sm:my-10;
+  @apply bg-border my-6 h-px border-0 sm:my-10;
 }
 
 /* Images */
 .markdown img {
-  @apply rounded-lg shadow-md max-w-full h-auto my-4 sm:my-8;
+  @apply my-4 h-auto max-w-full rounded-lg shadow-md sm:my-8;
 }
 
 /* SUIT Font Weight Utilities */

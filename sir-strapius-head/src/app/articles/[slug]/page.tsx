@@ -16,8 +16,8 @@ export default async function Page({
   return (
     <article>
       <Header pathname="/articles" />
-      <div className="container mx-auto px-4 py-8 animate-reveal">
-        <h1 className="text-3xl font-bold mb-4">{article?.title}</h1>
+      <div className="animate-reveal container mx-auto px-4 py-8">
+        <h1 className="mb-4 text-3xl font-bold">{article?.title}</h1>
         {article?.blocks?.map((block) => {
           if (block.__component !== "shared.rich-text") return null;
           if (!block.body) return null;
