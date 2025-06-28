@@ -1,5 +1,6 @@
 import { articleApi } from "@/api/articles";
 import { Header } from "@/components/_common/Header";
+import { MarkdownRenderer } from "@/components/_common/MarkoutReader";
 
 export default async function Page({
   params,
@@ -7,7 +8,10 @@ export default async function Page({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const article = await articleApi.bySlug(slug, {});
+  const articleSummary = await articleApi.bySlug(slug, {});
+  const { data: article } = await articleApi.byId({
+    path: { documentId: articleSummary?.documentId ?? "" },
+  });
 
   return (
     <div>
@@ -15,6 +19,13 @@ export default async function Page({
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold mb-4">{article?.title}</h1>
         <p className="text-muted-foreground">{article?.description}</p>
+        <div className="whitespace-pre-wrap">
+          {article?.blocks?.map((block) => {
+            if (block.__component !== "shared.rich-text") return null;
+            if (!block.body) return null;
+            return <MarkdownRenderer key={block.id} markdown={block.body} />;
+          })}
+        </div>
       </div>
     </div>
   );
