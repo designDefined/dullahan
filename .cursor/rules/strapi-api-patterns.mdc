@@ -1,0 +1,69 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# API File Patterns for sir-strapius-head
+
+## File Structure
+
+All API files should be located in `sir-strapius-head/src/api/` and follow the established patterns from [articles.ts](mdc:sir-strapius-head/src/api/articles.ts) and [about.ts](mdc:sir-strapius-head/src/api/about.ts).
+
+## Required Imports
+
+Every API file must include these imports:
+```typescript
+import qs from "qs";
+import { api } from "./_client";
+import { paths } from "./_types";
+```
+
+## Type Definitions
+
+Use the OpenAPI-generated types from [\_types.ts](mdc:sir-strapius-head/src/api/_types.ts):
+
+```typescript
+type ParamsType = paths["/endpoint"]["method"]["parameters"];
+type ResponseType = paths["/endpoint"]["method"]["responses"]["200"]["content"]["application/json"];
+```
+
+## API Method Pattern
+
+Each API method should follow this structure:
+```typescript
+const methodName = (params: ParamsType) =>
+  api
+    .get<ResponseType>("endpoint", { searchParams: qs.stringify(params.query) })
+    .json();
+```
+
+## Export Pattern
+
+Export a named object with all API methods:
+```typescript
+const apiName = {
+  method1,
+  method2,
+  // ... other methods
+};
+
+export { apiName };
+```
+
+## Examples
+
+- **Single method API** (like about): See [about.ts](mdc:sir-strapius-head/src/api/about.ts)
+- **Multiple methods API** (like articles): See [articles.ts](mdc:sir-strapius-head/src/api/articles.ts)
+
+## Key Principles
+
+1. Always use type-safe parameters and responses from the OpenAPI schema
+2. Use `qs.stringify()` for query parameter serialization
+3. Use the `api` client from [\_client.ts](mdc:sir-strapius-head/src/api/_client.ts)
+4. Follow the exact naming conventions: `{apiName}Api` for the exported object
+5. Use descriptive method names that indicate the API operation (e.g., `content`, `all`, `byId`, `bySlug`)
+
+## When to Apply
+
+This rule applies only when working with API files in the `sir-strapius-head/src/api/` directory.
+

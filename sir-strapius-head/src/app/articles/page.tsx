@@ -8,7 +8,7 @@ export default async function ArticlesPage() {
   return (
     <div>
       <Header pathname="/articles" />
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-8 animate-reveal">
         <h1 className="text-3xl font-bold mb-8">All Articles</h1>
         <div className="grid gap-6">
           {articles?.map(({ title, description, slug }, i) => (
