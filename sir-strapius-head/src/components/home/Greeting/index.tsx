@@ -1,6 +1,6 @@
 export function Greeting() {
   return (
-    <hgroup className="px-4">
+    <hgroup>
       <h1 className="pb-8 pt-32 text-7xl font-thin text-neutral-800 sm:text-8xl">
         The <span className="font-bold">Funnel</span>
       </h1>

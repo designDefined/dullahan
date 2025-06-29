@@ -1,6 +1,6 @@
 import { articleApi } from "@/api/articles";
+import { ArticleSummaryCard } from "@/components/_common/ArticleSummaryCard";
 import { Header } from "@/components/_common/Header";
-import { ArticleSummaryCard } from "@/components/home/ArticleSummaryCard";
 
 export default async function ArticlesPage() {
   const { data: articles } = await articleApi.all({});

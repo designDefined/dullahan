@@ -7,7 +7,7 @@ export default async function Home() {
   return (
     <article>
       <Header />
-      <main className="animate-reveal container mx-auto flex flex-col gap-16">
+      <main className="animate-reveal container mx-auto flex flex-col gap-16 px-4 py-8">
         <Greeting />
         <Separator />
         <Recent />
