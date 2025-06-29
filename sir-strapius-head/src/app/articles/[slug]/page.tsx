@@ -2,6 +2,18 @@ import { articleApi } from "@/api/articles";
 import { Header } from "@/components/_common/Header";
 import { MarkdownRenderer } from "@/components/_common/MarkoutReader";
 
+export async function generateStaticParams() {
+  const { data: articles } = await articleApi.all({});
+
+  if (!articles) {
+    return [];
+  }
+
+  return articles
+    .filter((article) => article.slug)
+    .map((article) => ({ slug: article.slug! }));
+}
+
 export default async function Page({
   params,
 }: {
