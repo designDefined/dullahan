@@ -1,0 +1,41 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+
+# React Component Rules
+
+## Component Structure
+
+- All components should be function components
+- Use named exports for all components except Next.js page or layout components
+- Page and layout components should use default exports (Next.js convention)
+
+## Component Naming
+
+- Use PascalCase for component names
+- Use descriptive, semantic names that indicate the component's purpose
+- Avoid generic names like "Component" or "Wrapper" unless absolutely necessary
+
+## File Structure
+
+- All component shuold located in each workspace's `src/components`, unless it is specifal NextJS component that shuold be located in app.
+- Component used only in specific route locates in `src/components/{topic-of-route}` directory. Topic-of-route doesn't neccessarily follow the name of route, such as `articles` and `article`. Singular is better since it's more topic-like.
+- Component used across the pages locaets in `src/components/_common`. Those are components like Header or Footer.
+- Shadcn components are located in `src/components/_ui`.
+- Component file should located in subdirectory that has same name with component. And the file name is always `index.tsx`. Except NextJS components in app directory.
+
+## Example
+
+```tsx
+// ✅ Good - Named export for regular components
+export function Button({ children, ...props }) {
+  return <button {...props}>{children}</button>;
+}
+
+// ✅ Good - Default export for Next.js pages
+export default function Page() {
+  return <div>Page content</div>;
+}
+```

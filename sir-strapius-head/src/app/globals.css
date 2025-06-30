@@ -3,10 +3,37 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@keyframes reveal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes navigation-link-active {
+  0% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-reveal {
+  animation: reveal 0.3s ease-out forwards;
+}
+
+.animate-navigation-link-active {
+  animation: navigation-link-active 0.3s ease-out forwards;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-suit);
   --font-mono: var(--font-geist-mono);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -119,4 +146,165 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Markdown Styles */
+.markdown {
+  @apply text-foreground leading-relaxed;
+}
+
+/* Headings - Strong Impact */
+.markdown h1 {
+  @apply text-foreground border-primary/20 mb-4 mt-6 border-b-2 pb-1 text-2xl font-bold leading-tight tracking-tight sm:mb-8 sm:mt-10 sm:pb-3 sm:text-4xl;
+}
+
+.markdown h2 {
+  @apply text-foreground border-muted mb-3 mt-5 border-b pb-1 text-xl font-semibold leading-tight tracking-tight sm:mb-6 sm:mt-8 sm:pb-2 sm:text-3xl;
+}
+
+.markdown h3 {
+  @apply text-foreground mb-2 mt-4 text-lg font-semibold leading-tight sm:mb-4 sm:mt-6 sm:text-2xl;
+}
+
+.markdown h4 {
+  @apply text-foreground mb-2 mt-3 text-base font-medium leading-tight sm:mb-3 sm:mt-5 sm:text-xl;
+}
+
+.markdown h5 {
+  @apply text-foreground mb-1 mt-2 text-sm font-medium leading-tight sm:mb-2 sm:mt-4 sm:text-lg;
+}
+
+.markdown h6 {
+  @apply text-muted-foreground mb-1 mt-2 text-xs font-medium leading-tight sm:mb-2 sm:mt-3 sm:text-base;
+}
+
+/* Paragraphs and Text */
+.markdown p {
+  @apply mb-3 text-sm leading-6 sm:mb-6 sm:text-base sm:leading-7;
+}
+
+.markdown strong {
+  @apply text-foreground font-semibold;
+}
+
+.markdown em {
+  @apply text-foreground italic;
+}
+
+.markdown a {
+  @apply text-primary/50 hover:text-primary/80 decoration-primary/30 hover:decoration-primary hover:bg-primary/5 rounded px-1 py-0.5 font-medium underline transition-all duration-200;
+}
+
+/* Code Blocks - Special and Well Looking */
+.markdown pre {
+  @apply bg-muted/50 border-border mb-4 w-full overflow-x-auto rounded-lg border p-3 shadow-sm sm:mb-8 sm:p-6;
+  @apply backdrop-blur-sm;
+}
+
+.markdown pre code {
+  @apply text-foreground block w-full bg-transparent p-0 font-mono text-xs sm:text-base;
+}
+
+.markdown code {
+  @apply bg-muted/70 text-foreground rounded-md px-1 py-0.5 font-mono text-xs sm:px-2 sm:py-1 sm:text-base;
+}
+
+/* Inline Code */
+.markdown :not(pre) > code {
+  @apply bg-muted/70 text-foreground rounded-md px-1 py-0.5 font-mono text-xs sm:px-2 sm:py-1 sm:text-base;
+}
+
+/* Lists */
+.markdown ul {
+  @apply mb-3 list-inside list-disc space-y-0.5 sm:mb-6 sm:space-y-2;
+}
+
+.markdown ol {
+  @apply mb-3 list-inside list-decimal space-y-0.5 sm:mb-6 sm:space-y-2;
+}
+
+.markdown li {
+  @apply text-sm leading-6 sm:text-base sm:leading-7;
+}
+
+.markdown li > ul,
+.markdown li > ol {
+  @apply ml-4 mt-2;
+}
+
+/* Blockquotes */
+.markdown blockquote {
+  @apply border-primary/30 bg-muted/30 mb-3 whitespace-pre-wrap rounded-r-lg border-l-4 py-1 pl-3 italic sm:mb-6 sm:py-2 sm:pl-6;
+}
+
+.markdown blockquote p {
+  @apply text-muted-foreground mb-0;
+}
+
+/* Tables */
+.markdown table {
+  @apply border-border mb-4 w-full border-collapse overflow-hidden rounded-lg border sm:mb-8;
+}
+
+.markdown th {
+  @apply bg-muted/50 text-foreground border-border border-b px-2 py-2 text-left text-xs font-semibold sm:px-6 sm:py-4 sm:text-sm;
+}
+
+.markdown td {
+  @apply border-border border-b px-2 py-2 text-xs sm:px-6 sm:py-4 sm:text-sm;
+}
+
+.markdown tr:last-child td {
+  @apply border-b-0;
+}
+
+.markdown tr:hover {
+  @apply bg-muted/30;
+}
+
+/* Horizontal Rule */
+.markdown hr {
+  @apply bg-border my-6 h-px border-0 sm:my-10;
+}
+
+/* Images */
+.markdown img {
+  @apply my-4 h-auto max-w-full rounded-lg shadow-md sm:my-8;
+}
+
+/* SUIT Font Weight Utilities */
+.font-thin {
+  font-weight: 100;
+}
+
+.font-extralight {
+  font-weight: 200;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-extrabold {
+  font-weight: 800;
+}
+
+.font-black {
+  font-weight: 900;
 }

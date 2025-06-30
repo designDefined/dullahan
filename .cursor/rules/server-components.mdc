@@ -1,0 +1,60 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+
+# Server Components Rules
+
+## Server Component Priority
+
+- Use server components as much as possible for better performance
+- Server components reduce client-side JavaScript bundle size
+- They enable direct database access and server-side data fetching
+
+## When to Use Server Components
+
+- Components that don't need interactivity (static content)
+- Components that fetch data from APIs or databases
+- Components that access backend resources (files, databases)
+- Components that need to be SEO-friendly
+- Components that don't use browser APIs or React hooks
+
+## When to Use Client Components
+
+- Components that need interactivity (onClick, onChange, etc.)
+- Components that use React hooks (useState, useEffect, etc.)
+- Components that use browser APIs (localStorage, window, etc.)
+- Components that need event listeners
+- Components that use third-party libraries requiring client-side execution
+
+## File Conventions
+
+- Server components are the default in Next.js 13+ App Router
+- Add `"use client"` directive at the top of files that need to be client components
+- Keep client components as small as possible, moving logic to server components when feasible
+
+## Example
+
+```tsx
+// ✅ Server Component (default) - no "use client" directive
+export function ArticleList({ articles }) {
+  return (
+    <div>
+      {articles.map((article) => (
+        <ArticleCard key={article.id} article={article} />
+      ))}
+    </div>
+  );
+}
+
+// ✅ Client Component - has "use client" directive
+("use client");
+export function LikeButton({ articleId }) {
+  const [liked, setLiked] = useState(false);
+
+  return (
+    <button onClick={() => setLiked(!liked)}>{liked ? "❤️" : "🤍"}</button>
+  );
+}
+```
