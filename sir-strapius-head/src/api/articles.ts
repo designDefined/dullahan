@@ -19,7 +19,10 @@ type ByIdResponse =
 const byId = (params: ByIdParams) =>
   api
     .get<ByIdResponse>(`articles/${params.path.documentId}?populate=*`, {
-      searchParams: qs.stringify(params.query),
+      searchParams: qs.stringify({
+        populate: "*",
+        ...(params.query ?? {}),
+      }),
     })
     .json();
 

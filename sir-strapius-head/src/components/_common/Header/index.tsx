@@ -8,6 +8,7 @@ interface HeaderProps {
 export function Header({ pathname = "/" }: HeaderProps) {
   const isHomeActive = pathname === "/";
   const isArticlesActive = pathname === "/articles";
+  const isCategoriesActive = pathname === "/categories";
   const isAboutActive = pathname === "/about";
 
   return (
@@ -17,6 +18,9 @@ export function Header({ pathname = "/" }: HeaderProps) {
         <nav className="flex items-center space-x-8">
           <NavigationLink href="/articles" isActive={isArticlesActive}>
             Articles
+          </NavigationLink>
+          <NavigationLink href="/categories" isActive={isCategoriesActive}>
+            Categories
           </NavigationLink>
           <NavigationLink href="/about" isActive={isAboutActive}>
             About
