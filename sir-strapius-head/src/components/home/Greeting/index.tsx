@@ -7,7 +7,7 @@ export function Greeting() {
       <p className="text-primary/75 text-base font-light sm:text-xl/relaxed">
         쓰고 싶은 글이 많을 때는
         <br />
-        <strong className="text-primary font-extrabold">깔대기</strong>가
+        <strong className="text-primary font-extrabold">깔때기</strong>가
         필요합니다
       </p>
     </hgroup>

@@ -47,7 +47,9 @@ export default async function ArticlePage({
           articleName={article?.title}
         />
         <div className="mb-8">
-          <h1 className="mb-6 text-3xl font-bold">{article?.title}</h1>
+          <h1 className="mb-6 break-words break-keep text-3xl font-bold">
+            {article?.title}
+          </h1>
           {article?.createdAt && (
             <div className="mb-8 text-right text-sm text-gray-500">
               {dayjs(article.createdAt).format("YYYY년 M월 D일")}

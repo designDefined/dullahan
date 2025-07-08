@@ -19,8 +19,8 @@ export function CategorySummaryCard({
   slug,
 }: CategorySummaryCardProps) {
   return (
-    <Link href={`/categories/${slug}`}>
-      <Card className="group h-32 w-48 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:opacity-90 hover:shadow-lg hover:shadow-gray-200/50">
+    <Link className="w-full sm:w-48" href={`/categories/${slug}`}>
+      <Card className="group h-32 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:opacity-90 hover:shadow-lg hover:shadow-gray-200/50">
         <CardHeader className="flex h-full flex-col justify-center p-4">
           {name && (
             <CardTitle className="text-center text-lg text-gray-700 transition-opacity duration-300 group-hover:opacity-80">
