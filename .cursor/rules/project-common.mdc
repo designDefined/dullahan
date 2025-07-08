@@ -1,0 +1,23 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+
+# Project Guide (Common)
+
+This document outlines the overall structure and convention of this project.
+
+## Package manager
+
+This project uses yarn for pacakge manager and mono-repo organizer. Always use `yarn` instead of `npm` to manipulate dependencies or run commands.
+
+Use `yarn add` to install packages. Use root `package.json`'s workspace alias to install pacakge in workspace-specific context.
+
+```bash
+# Install shared pacakge
+yarn add react
+
+# Install workspace-specific package (ex. strapi-head)
+yarn strapi-head add react
+```

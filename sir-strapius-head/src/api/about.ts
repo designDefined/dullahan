@@ -9,7 +9,12 @@ type ContentResponse =
 
 const content = (params: ContentParams) =>
   api
-    .get<ContentResponse>("about", { searchParams: qs.stringify(params.query) })
+    .get<ContentResponse>("about", {
+      searchParams: qs.stringify({
+        populate: "*",
+        ...(params.query ?? {}),
+      }),
+    })
     .json();
 
 const aboutApi = {

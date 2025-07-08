@@ -19,7 +19,7 @@ export function NavigationLink({
     <Link href={href} className="group relative">
       <Button
         variant={isActive ? "default" : "ghost"}
-        className={`relative overflow-hidden transition-all duration-500 ease-out ${
+        className={`relative cursor-pointer overflow-hidden transition-all duration-500 ease-out ${
           isActive
             ? "bg-primary text-primary-foreground animate-navigation-link-active shadow-lg"
             : "hover:bg-accent/50"

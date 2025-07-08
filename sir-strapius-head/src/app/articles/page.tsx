@@ -11,12 +11,13 @@ export default async function ArticlesPage() {
       <div className="animate-reveal container mx-auto px-4 py-8">
         <h1 className="mb-8 text-3xl font-bold">All Articles</h1>
         <div className="grid gap-6">
-          {articles?.map(({ title, description, slug }, i) => (
+          {articles?.map(({ title, description, slug, createdAt }, i) => (
             <ArticleSummaryCard
               key={i}
               title={title}
               description={description}
               slug={slug}
+              createdAt={createdAt}
             />
           ))}
         </div>

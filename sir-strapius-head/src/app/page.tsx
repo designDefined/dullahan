@@ -3,7 +3,7 @@ import { Separator } from "@/components/_ui/separator";
 import { Greeting } from "@/components/home/Greeting";
 import { Recent } from "@/components/home/Recent";
 
-export default async function Home() {
+export default async function HomePage() {
   return (
     <article>
       <Header />
